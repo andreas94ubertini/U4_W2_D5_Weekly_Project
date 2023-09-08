@@ -1,0 +1,38 @@
+======================================================
+
+CREATE PROCEDURE CercaPerData1
+@Data DATE
+AS
+BEGIN
+	SELECT sum(DECURTAMENTOPUNTI) AS TotalePuntiDecurtati	
+	FROM VERBALE
+	WHERE DATAVIOLAIONE = @Data
+END
+GO
+
+======================================================
+
+CREATE PROCEDURE EliminaById
+@Id int
+AS
+BEGIN
+	DELETE FROM VERBALE 
+	WHERE IDVERBALE = @Id
+
+END
+GO
+
+======================================================
+
+CREATE PROCEDURE CercaPerAnno
+@Anno INT
+AS
+BEGIN
+SELECT * 
+FROM VERBALE
+WHERE YEAR(DATAVIOLAIONE) = @Anno
+
+END
+GO
+
+======================================================
